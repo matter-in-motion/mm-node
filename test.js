@@ -37,6 +37,7 @@ test.serial('creates a node', t => node
   })
 );
 
+let nids;
 test.serial('creates multiple nodes', t => node
   .create([
     {
@@ -49,11 +50,17 @@ test.serial('creates multiple nodes', t => node
     }
   ])
   .then(ids => {
+    nids = ids;
     t.is(ids.length, 2);
     t.regex(ids[0], rxUUID);
     t.regex(ids[1], rxUUID);
   })
 );
+
+test.serial('deletes multiple nodes', t => node
+  .deleteAll(nids)
+  .then(res => t.is(res.deleted, 2))
+)
 
 test.serial('gets a node', t => node
   .get(nid)

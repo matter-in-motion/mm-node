@@ -54,5 +54,16 @@ Controller.prototype._delete = function(id, opts) {
     .delete(opts);
 };
 
+Controller.prototype.deleteAll = function(ids, opts) {
+  return this._deleteAll(ids, opts).run();
+};
+
+Controller.prototype._deleteAll = function(ids, opts) {
+  const r = this.r;
+  return r.table(this.table)
+    .getAll(r.args(ids))
+    .delete(opts);
+};
+
 
 module.exports = Controller;

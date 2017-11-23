@@ -72,5 +72,10 @@ Deletes a node and return node id that was deleted
 
 * __id__ — node id
 
+### deleteAll(ids)
+
+Deletes multiple nodes.
+
+* __ids__ — array of node id
 
 License: MIT.
