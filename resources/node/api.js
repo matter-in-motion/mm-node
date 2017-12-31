@@ -55,7 +55,7 @@ module.exports = {
       call: (auth, data) => this
         .get(data.id)
         .catch(ReqlDriverError)
-        .catch(errors.NotFound)
+        .catch(errors.ifError('NotFound'))
     }
   },
 
@@ -93,6 +93,7 @@ module.exports = {
       call: (auth, data) => this
         .update(data.id, data.to.content)
         .catch(ReqlDriverError)
+        .catch(errors.ifError('NotFound'))
     }
   }
 };
