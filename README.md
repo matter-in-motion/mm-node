@@ -64,11 +64,11 @@ Creates a node or many nodes and return a list of new nodes ids.
 updates a node and return node id that was updated
 
 * __id__ — node id
-* __content__ — new content. Note that content will be updated, i.e. merged with old content. To replace content use [`literal`](https://rethinkdb.com/api/javascript/literal/) command
+* __content__ — new content. Note that content is updated, i.e., merged with old content.
 
 ### delete(id)
 
-Deletes a node and return node id that was deleted
+Deletes a node and return deleted node id
 
 * __id__ — node id
 
