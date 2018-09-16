@@ -28,7 +28,7 @@
     "mm-rethinkdb": "^1.0.0",
     "mm-rethinkdb-schema": "^1.0.0",
     "mm-test": "^3.0.0",
-    "nyc": "^11.6.0"
+    "nyc": "^13.0.0"
   },
   "scripts": {
     "test": "nyc ava"

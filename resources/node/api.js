@@ -15,7 +15,6 @@ module.exports = {
   get: function() {
     return {
       auth: {
-        provider: 'user',
         required: true
       },
       title: 'Node',
@@ -47,7 +46,7 @@ module.exports = {
           },
 
           content: {
-            type: 'object'
+            type: [ 'number', 'string', 'object', 'array' ]
           }
         }
       },
@@ -62,7 +61,6 @@ module.exports = {
   update: function() {
     return {
       auth: {
-        provider: 'user',
         required: true
       },
       title: 'Node',
@@ -80,7 +78,12 @@ module.exports = {
           to: {
             type: 'object',
             additionalProperties: false,
-            required: [ 'content' ]
+            required: [ 'content' ],
+            properties: {
+              content: {
+                type: [ 'number', 'string', 'object', 'array' ]
+              }
+            }
           }
         }
       },
